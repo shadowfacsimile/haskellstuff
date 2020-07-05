@@ -1,11 +1,8 @@
-fibgen :: Int -> Int -> [Int]
-fibgen x y = x : fibgen y (x + y)
-
-fib :: [Int]
-fib = fibgen 1 1
+fib :: Int -> Int -> [Int]
+fib x y = x : fib y (x + y)
 
 takefib :: Int -> [Int]
-takefib n = take n fib
+takefib n = take n $ fib 1 1
 
 eul :: Int
 eul = sum $ filter even $ takefib 33
